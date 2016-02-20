@@ -16,13 +16,13 @@ Using PHP, MySQL, HTML/CSS, Javascript, MVC design pattern, write a login / regi
 
     $ mysql -e "source users.sql"
 
-### Done ###
+### Done 
 
 Now open your browser and visit `localhost/mvc_login_reg_app`, you will see the home page.
 
 Play around by clicking login, register, home links provided
 
-### Solution ###
+### Solution 
 
 This project is totally following the MVC pattern. No use of any framework at this point to save time.
 
@@ -30,12 +30,12 @@ Front end uses Bootstrap for CSS
 
 No Javascript used. Can use to make it better
 
-### Directories and File structure ###
+### Directories and File structure 
 
 mvc_login_reg_app
 ├── controllers                 The C of MVC Design interacting  with the model and the View
-│   ├── pages_controller        
-│   ├── users_controller
+│   ├── pages_controller        
+│   ├── users_controller
 ├── models                      The M of MVC for business logic and data manipulation
 │   └── user.php                Interaction with user oblect (table) in the database
 │
