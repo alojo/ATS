@@ -33,13 +33,13 @@ No Javascript used. Can use to make it better
 ### Directories and File structure 
 
 mvc_login_reg_app
-├── controllers                 The C of MVC Design interacting  with the model and the View
+├── controllers                
 │   ├── pages_controller        
 │   ├── users_controller
-├── models                      The M of MVC for business logic and data manipulation
-│   └── user.php                Interaction with user oblect (table) in the database
+├── models         
+│   └── user.php
 │
-├── views                       The V of MVC handling all the renders
+├── views
 │   ├── pages
 │   │   ├── errors.php
 │   │   └── home.php
@@ -48,10 +48,10 @@ mvc_login_reg_app
 │   │   └── register.php
 │   ├── layout.php
 │   └── navigation.php
-└── connections                 The database connection
+└── connections 
 │
-├── index.php                   The main page through with all requests passes
-└── routes.php                  Routing is handled here
+├── index.php
+└── routes.php
 
 ## Conclusion
 
