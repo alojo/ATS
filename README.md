@@ -33,25 +33,24 @@ No Javascript used. Can use to make it better
 ### Directories and File structure 
 
 mvc_login_reg_app
-├── controllers                
-│   ├── pages_controller        
-│   ├── users_controller
-├── models         
-│   └── user.php
-│
-├── views
-│   ├── pages
-│   │   ├── errors.php
-│   │   └── home.php
-│   └── users
-│   │   ├── login.php
-│   │   └── register.php
-│   ├── layout.php
-│   └── navigation.php
-└── connections 
-│
-├── index.php
-└── routes.php
+
+-- controllers
+----- pages_controller
+----- users_controller
+-- models
+----- user.php
+-- views
+----- pages
+-------- errors.php
+-------- home.php
+----- users
+-------- login.php
+-------- register.php
+----- layout.php
+----- navigation.php
+-- connections
+-- index.php
+-- routes.php
 
 ## Conclusion
 
