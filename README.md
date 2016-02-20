@@ -32,18 +32,19 @@ No Javascript used. Can use to make it better
 
 ### Directories and File structure 
 
-mvc_login_reg_app
+mvc_login_reg_app      -- main folder under web root
 
--- controllers
------ pages_controller
------ users_controller
--- models
------ user.php
--- views
------ pages
--------- errors.php
--------- home.php
------ users
+controllers/           
+
+controllers/pages_controller/
+controllers/users_controller/
+
+
+
+
+
+
+- users
 -------- login.php
 -------- register.php
 ----- layout.php
