@@ -4,7 +4,7 @@
 
 Using PHP, MySQL, HTML/CSS, Javascript, MVC design pattern, write a login / register application.
 
-### Setup ###
+### Setup 
 
 1) Pull the repository into your root folder.
 
@@ -32,73 +32,31 @@ No Javascript used. Can use to make it better
 
 ### Directories and File structure 
 
-mvc_login_reg_app      -- main folder under web root
+mvc_login_reg [main folder under web root]
 
-controllers/           
+controllers/  [controller folder with two files interacting with View and Model]        
 
-controllers/pages_controller/
-controllers/users_controller/
+controllers/pages_controller.php
+controllers/users_controller.php
 
+models/                 [The M of MVC for business logic and data manipulation]
+models/user.php          [Interaction with user oblect (table) in the database]
 
+views/ [The V of MVC handling all the renders]
+views/pages
+views/pages/errors.php
+views/pages/home.php
 
+views/users
+views/users/login.php
+views/users/register.php
 
-app/Config/config.ini       database settings
-app/Config/routes.php       route definations
+views/layout.php
+views/navigation.php
 
-app/Controllers/
-    - Controller            base class of all controllers
-    - HomeController
-    - UserController
-    - ErrorController
-
-app/Models/
-    - Model                 base class of all models
-    - UserModel
-
-app/Views/
-    - error404.phtml
-    - home.phtml
-    - login.phtml
-    - register.phtml
-    - welcome.phtml
-
-common/                     kernel classes of the framework
-    - Application.php
-    - AutoLoader.php
-    - Config.php
-    - Database.php
-    - ErrorHandler.php
-    - Logger.php
-    - Password.php
-    - Request.php
-    - Router.php
-    - Session.php
-    - Template.php
-
-var/
-    - logs/app.log
-    - logs/error.log
-    - var/sessions/
-
-web                         DocumentRoot
-    - css/style.css
-    - js/login.js
-    - js/register.js
-
-web/.htaccess               Apache rewrite rules for clean url
-web/index.php               front controller
-
-
-
-
-- users
--------- login.php
--------- register.php
------ layout.php
------ navigation.php
--- connections
--- index.php
--- routes.php
+connections.php     [The database connection]
+index,php           [The main page through with all requests passes]
+routes.php          [Routing is handled here]
 
 ## Conclusion
 
