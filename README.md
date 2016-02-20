@@ -1,6 +1,6 @@
-### ATS ONLINE TEST ###
+### ATS ONLINE TEST 
 
-### Requirement ### 
+### Requirement 
 
 Using PHP, MySQL, HTML/CSS, Javascript, MVC design pattern, write a login / register application.
 
