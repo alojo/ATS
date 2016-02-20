@@ -7,35 +7,18 @@
   }
 */      
 
-  
-
-
-  function call($controller, $action) { echo 'a call is made //////';
+  function call($controller, $action) { 
     // require the file that matches the controller name
     require_once('controllers/' . $controller . '_controller.php');
 
     // create a new instance of the needed controller
-   var_dump($action);
+    
     if($controller){
         $controller_class = ucfirst($controller).'Controller'; 
         require_once('models/user.php');
         $controller = new $controller_class();
         
     }
-      /*
-    switch($controller) {
-      case 'pages':
-        $controller = new PagesController();
-      break;
-      case 'users':
-        // we need the model to query the database later in the controller
-        require_once('models/user.php');
-        $controller = new UsersController();
-      break;
-    } 
-     */ 
-     
-    // call the action
     $controller->{ $action }();
   }
 

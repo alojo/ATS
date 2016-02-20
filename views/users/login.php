@@ -6,7 +6,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Login</div>
         <div class="panel-body">
-          <div class="error"><?php echo isset($user) ? $user : ''; ?></div>
+          <div class="error bg-danger"><?php echo isset($user) ? $user : ''; ?></div>
           <form role="form" method="POST" action="" id="login">
             <div class="form-group">
               <label for="username">Username:</label>
@@ -21,5 +21,4 @@
         </div>
       </div>
     </div>
-
 </section>

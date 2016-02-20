@@ -23,14 +23,15 @@
               $db = Db::getInstance();
 
               $req = $db->prepare('SELECT * FROM users WHERE username = :username');
-              // the query was prepared, now we replace :id with our actual $id value
+              
               $req->execute(array('username' => $username));
               $user = $req->fetch();
               if(!empty($user)){
                 if(password_verify($password,$user['password']) == 1){
                     $_SESSION['user_session'] = $user['userID'];
-                    echo 'session set '; var_dump($_SESSION['user_session']);
                     return new User($user['userID'], $user['username'], $user['email']);
+                }else{
+                    return 'Please check your entered password';
                 }
               }else{
                   return 'OOP! We couldn\'t find you. Please try logging again';
@@ -44,12 +45,13 @@
 
     }
     public static function validate($post) {
-       //validate data
+            //validate data
             $error = [];
+            $db = Db::getInstance();
             if(strlen($post['username']) < 3){
                 $error[] = 'Username is too short.';
             } else {
-                $db = Db::getInstance();
+                
                 $stmt = $db->prepare('SELECT username FROM users WHERE username = :username');
                 $stmt->execute(array(':username' => $post['username']));
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -66,6 +68,7 @@
             if(!filter_var($post['email'], FILTER_VALIDATE_EMAIL)){
                 $error[] = 'Please enter a valid email address';
             } else {
+                
                 $stmt = $db->prepare('SELECT email FROM users WHERE email = :email');
                 $stmt->execute(array(':email' => $post['email']));
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -78,24 +81,27 @@
             return $error;
     }
       
-    public static function register($username, $password, $email) {
-      if(!empty($username) && !empty($password)){
-          $db = Db::getInstance();
-          $stmt = $db->prepare('INSERT INTO users (username,password,email) VALUES (:username, :password, :email)');
-          $stmt->execute(array(
-            ':username' => $username,
-            ':password' => $password,
-            ':email' => $email,
-          //  ':active' => $activasion
-          ));
-          $id = $db->lastInsertId('userID');
-          
-          return $id;       
-          
-      }
+    public static function register($username, $password, $email, $telephone) {
+        try{
+            if(!empty($username) && !empty($password)){
+                $db = Db::getInstance();
+                $stmt = $db->prepare('INSERT INTO users (username,password,email,telephone) VALUES (:username, :password, :email, :telephone)');
+                $stmt->execute(array(
+                ':username' => $username,
+                ':password' => $password,
+                ':email' => $email,
+                ':telephone' => $telephone
+            ));
+            $id = $db->lastInsertId('userID');
+            $_SESSION['new_user'] = $id;
+            return $id;       
+            }
+        }
+        catch(PDOException $e)
+        {
+            return $e->getMessage();
+        }
+    }        
 
-    }
-      
-      
   }
 ?>

@@ -1,12 +1,12 @@
 <?php require_once('views/navigation.php'); ?>
 <section class="row col-md-6 col-md-offset-3">
-   <h2>User Register</h2>
+   <h2>Create an Account</h2>
       <div class="panel panel-default">
         <div class="panel-heading">Register</div>
         <div class="panel-body">
-          <div class="error"> 
+          <div class="error bg-danger"> 
               <?php 
-                echo isset($error) ? array ($error) : ''; 
+                echo isset($err_msg) ? $err_msg : ''; 
               ?> 
           </div>
           <form method="POST" action="" id="register">
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="footer">
-              <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Create an Account</button>
             </div>
           </form>
         </div>
