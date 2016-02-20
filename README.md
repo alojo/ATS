@@ -42,6 +42,53 @@ controllers/users_controller/
 
 
 
+app/Config/config.ini       database settings
+app/Config/routes.php       route definations
+
+app/Controllers/
+    - Controller            base class of all controllers
+    - HomeController
+    - UserController
+    - ErrorController
+
+app/Models/
+    - Model                 base class of all models
+    - UserModel
+
+app/Views/
+    - error404.phtml
+    - home.phtml
+    - login.phtml
+    - register.phtml
+    - welcome.phtml
+
+common/                     kernel classes of the framework
+    - Application.php
+    - AutoLoader.php
+    - Config.php
+    - Database.php
+    - ErrorHandler.php
+    - Logger.php
+    - Password.php
+    - Request.php
+    - Router.php
+    - Session.php
+    - Template.php
+
+var/
+    - logs/app.log
+    - logs/error.log
+    - var/sessions/
+
+web                         DocumentRoot
+    - css/style.css
+    - js/login.js
+    - js/register.js
+
+web/.htaccess               Apache rewrite rules for clean url
+web/index.php               front controller
+
+
 
 
 - users
